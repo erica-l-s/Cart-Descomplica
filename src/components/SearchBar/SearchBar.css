@@ -9,6 +9,7 @@
     padding-right: 13px;
 }
 
+
 .search__input{
     padding: 13px;
     flex-grow: 1;
@@ -17,6 +18,9 @@
     font-size: 0.8rem;
     font-weight: 500px;
     border-right: 1px solid #ddd;
+}
+.search__input[type="search"]{
+    color: #e6819b;
 }
 
 .search__button{
