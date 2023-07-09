@@ -4,6 +4,7 @@
     border-bottom: 1px solid #ddd;
     padding-bottom: 20px;
     margin-bottom: 20px;
+    position: relative;
 }
 
 .cart-item-image{
@@ -25,4 +26,15 @@
 
 .cart-item-content{
     padding: 0 35px 0 10px;
+}
+
+.button__remove-item{
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #d83232;
+    font-size: 1.4rem;
+    border: none;
+    background: none;
+    cursor: pointer;
 }
