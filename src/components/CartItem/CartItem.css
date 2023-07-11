@@ -38,3 +38,19 @@
     background: none;
     cursor: pointer;
 }
+.cart-item-quanty{
+    display: flex;
+    align-items: center;
+ 
+}
+.button__quanty-item{
+    color:#6a1a2f;
+    font-size: 1.5rem;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.cart-item-number{
+    margin: 0.5rem;
+}
