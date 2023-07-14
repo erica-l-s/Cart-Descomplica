@@ -9,9 +9,17 @@ function ProductCard({data}) {
 const {title, thumbnail, price} = data
 const {cartItems,setCartItems} = useContext(AppContext)
 
-const handleAddCart = () =>{
-  setCartItems([...cartItems,data])
-}
+const handleAddCart = () => {
+    const existingItem = cartItems.find((item) => item.id === data.id);
+    if (existingItem) {
+      const updatedItems = cartItems.map((item) =>
+        item.id === data.id ? { ...item, quantity: item.quantity + 1 } : item
+      );
+      setCartItems(updatedItems);
+    } else {
+      setCartItems([...cartItems, { ...data, quantity: 1}]);
+    }
+  };
 
     return (
         <section className='product-card'>

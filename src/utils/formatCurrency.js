@@ -1,9 +1,9 @@
 
-function formatCurrency(value,currency) {
+function formatCurrency(value) {
   return (
     value.toLocaleString('pt-br',{
         style:'currency',
-        currency,
+        currency:'BRL',
     })
   )
 }

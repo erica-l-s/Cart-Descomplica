@@ -54,3 +54,8 @@
 .cart-item-number{
     margin: 0.5rem;
 }
+
+button:disabled{
+    color: #ccc;
+}
+

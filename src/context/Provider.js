@@ -9,18 +9,26 @@ function Provider({children}) {
     const [isCartVisible, setIsCartVisible] = useState(false)
 
     useEffect(() => {
-        const cartItemsData = JSON.parse(localStorage.getItem('cartItems'))
+        const cartItemsData = localStorage.getItem('cartItems')
         
         if (cartItemsData) {
-            setCartItems(cartItemsData)
+            setCartItems(JSON.parse(cartItemsData))
         }
     }, [])
     
-    useEffect(() => {
-        
-        localStorage.setItem('cartItems', JSON.stringify(cartItems))
-    }, [cartItems])
-     
+      useEffect(() => {
+        const handleBeforeUnload = () => {
+          localStorage.setItem('cartItems', JSON.stringify(cartItems));
+        };
+    
+        window.addEventListener('beforeunload', handleBeforeUnload);
+    
+        return () => {
+          window.removeEventListener('beforeunload', handleBeforeUnload);
+        };
+      }, [cartItems]);
+
+   
     const value = {
         products,
         setProducts,
@@ -30,6 +38,7 @@ function Provider({children}) {
         setCartItems,
         isCartVisible, 
         setIsCartVisible,
+      
     }
 
   return (

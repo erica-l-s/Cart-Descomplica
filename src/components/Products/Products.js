@@ -7,8 +7,7 @@ import AppContext from '../../context/AppContext'
 
 function Products() {
     const {products, setProducts,loading,setLoading} = useContext(AppContext)
-    
-
+        
     useEffect(() => {
         fetchProducts('perfume').then((response) => {
             setProducts(response)
